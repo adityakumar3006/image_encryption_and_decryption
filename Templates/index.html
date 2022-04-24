@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+<!-- <img src="https://scx1.b-cdn.net/csz/news/800/2017/theoreticala.jpg" alt="an artist rendition of a black hole in space"> -->
+<script type="text/javascript" src="{{ url_for('static',filename='script/script.js') }}">
+</script>
+
+<style>
+  
+  body{
+    background-color: rgb(37, 105, 136);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://miro.medium.com/max/1400/1*EY50YzYGk9JkYo6K779u-A.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    opacity: 85%;
+    
+  }
+
+  .title{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 6vh;
+  }
+
+  .formGiven{
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: fit-content;
+    padding: 3vh 5vw;
+    margin-top: 15vh;
+    background-color: white;
+    box-shadow: 0px 0px 10px 7px rgba(0,0,0,0.68);
+    -webkit-box-shadow: 0px 0px 10px 7px rgba(0,0,0,0.68);
+    -moz-box-shadow: 0px 0px 10px 7px rgba(0,0,0,0.68);
+    border-radius: 20px;
+  }
+
+  .formLable{
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .formInput{
+    height: 20px;
+    /* border-radius: 5px; */
+    outline: none;
+    border: none;
+    border-bottom: 2px solid black;
+    /* background-color: gray; */
+    padding: 0px 10px;
+    margin-bottom: 5vh;
+    /* width: 70% */
+  }
+
+  .choice{
+    margin-bottom: 5vh;
+    margin-top: 5px;
+    height: 25px;
+    font-size: 16px;
+  }
+
+  .btn{
+    margin-top: 15px;
+    width: 20%;
+    margin: 0px auto;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .btn:hover{
+    background-color: gray;
+    color: white;
+  }
+
+
+</style>
+
+</head>
+<body>
+
+<form action="/submit" method='post' class="formGiven">
+  <h2 class="title">File Encryption and Decryption</h2>
+  <label for="Choose" class="formLable">Choose:</label>
+  <!-- <input type="text" id="choose" name="choose" value="0" class="formInput"> -->
+  <select class="choice" id="choose" name="choose">
+    <option value="1">Encryption</option>
+    <option value="2">Decryption</option>
+  </select>
+  <label for="ID" class="formLable">Key</label>
+  <input type="text" id="id" name="id" class="formInput">
+  <label for="FilePath" class="formLable">File Path</label>
+  <input type="text" id="filePath" name="filePath" class="formInput">
+  <input type="submit" value="Submit" class="btn">
+</form>
+
+</body>
+</html>
